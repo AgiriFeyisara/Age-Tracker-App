@@ -1,0 +1,130 @@
+@import "reset.scss";
+@import "variable.scss";
+
+.container {
+  font-family: [Poppins];
+  background-color: hsl(0, 0%, 86%);
+  position: relative;
+  height: 100vh;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 40px;
+  width: 500px;
+  border-radius: 12px;
+  border-bottom-right-radius: 150px;
+}
+.inputField {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: $accent-color;
+  font-weight: map-get($map: $font-weights, $key: bold);
+  .inputField::placeholder {
+    color: $primary-color;
+  }
+
+  input {
+    width: 90px;
+    height: 40px;
+    border: 1px solid $accent-color;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    border-radius: 5px;
+    margin-top: 7px;
+    font-weight: map-get($map: $font-weights, $key: bold);
+
+    &::placeholder {
+      color: $primary-color;
+      font-weight: map-get($map: $font-weights, $key: bold);
+      font-size: 18px;
+    }
+  }
+  input:focus {
+    border-color: $secondary-color;
+    outline: none;
+  }
+
+  label {
+    font-weight: map-get($map: $font-weights, $key: medium);
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+.border {
+  border-bottom: 2px solid hsl(0, 0%, 86%);
+  margin-top: 40px;
+}
+.btn {
+  border-radius: 50%;
+  background-color: $secondary-color;
+  border: none;
+  outline: none;
+  margin-left: 380px;
+  margin-top: -50px;
+  cursor: pointer;
+}
+.btn:focus {
+  background-color: $primary-color;
+}
+span {
+  color: $secondary-color;
+  font-style: italic;
+  font-weight: map-get($map: $font-weights, $key: bold);
+}
+h1 {
+  font-style: italic;
+  font-size: 50px;
+}
+.error-message {
+  color: $error-color;
+  font-size: 12px;
+  margin-top: 10px;
+  font-style: italic;
+}
+.error-label {
+  color: $error-color;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 20px;
+    position: relative;
+  }
+
+  .inputField {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .border {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .btn {
+    position: absolute;
+    left: -50%;
+    margin-top: -85px;
+    width: 60px;
+    height: 60px;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
